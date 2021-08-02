@@ -4,6 +4,13 @@
 ```
 https://www.mongodb.com/try/download/community
 ```
+## IDE
+### Visual Studio Code - with extension REST Client (to enable use of "route.rest" file) found as below
+```
+https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+```
+### or install via "Extensions Marketplace" in VS Code, alternatively use Postman or similar
+
 ## Quick Start (use the terminal/command prompt)
 ### Please see "instructions.txt" file for full explaination of getting this up and running
 #### Initialise package 
