@@ -1,6 +1,6 @@
 # REST API using Node.js, Express and MongoDB
 
-## Important - this application needs access to MongoDB, if you do not have it installed or access to it please follow the link below
+### Important - this application needs access to MongoDB, if you do not have it installed or access to it please follow the link below
 ```
 https://www.mongodb.com/try/download/community
 ```
@@ -12,6 +12,7 @@ https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 ```
 ### or install via "Extensions Marketplace" in VS Code, alternatively use Postman or similar
 
+#
 ## Quick Start (use the terminal/command prompt)
 ### Please see "instructions.txt" file for full explaination of getting this up and running
 #### Initialise package 
@@ -39,7 +40,7 @@ DATABASE_URL = mongodb://localhost/subscribers
 ```
 npm run devStart
 ```
-
+#
 ## Acknowledgements and Resources
 ```
 https://www.youtube.com/watch?v=fgTGADljAeg
