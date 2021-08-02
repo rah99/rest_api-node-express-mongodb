@@ -5,7 +5,7 @@
 https://www.mongodb.com/try/download/community
 ```
 ## Quick Start (use the terminal/command prompt)
-### Please see instructions.txt file for full explaination of getting this up and running
+### Please see "instructions.txt" file for full explaination of getting this up and running
 #### Initialise package 
 ```
 npm init -y
