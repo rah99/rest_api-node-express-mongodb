@@ -1,0 +1,90 @@
+RESOURCES
+https://www.youtube.com/watch?v=fgTGADljAeg
+
+*****NOTE - mongoDB must be installed for this to work! - if not on local machine goto https://www.mongodb.com/try/download/community 
+and download the version for your OS*****
+
+This is a REST (REpresentation State Transfer) API using GET, POST, PUT, DELETE
+
+1.  Initialise package 'npm init -y' - the -y defaults the instal process thus saving constant 'return' entries
+2.  Import dependencies 'npm i express mongoose --save' - express simplifies app making over Node and mongoose allows for interaction with MongoDB, --save
+    makes sure it is a dependency
+3.  Import 'npm i --save-dev dotenv nodemon' - --save-dev ensures dev dependencies are not replicated in live env, dotenv is the environment and its 
+    variables thus keeping everything the same as when developed, nodemon allows for the display of updates on refresh on the env server
+4.  Add "devStart": "nodemon server.js" to 'package.json' = replace the "test": "..." entry 
+    ****NOTE the server.js will be what is the current server file name****
+5.  Create the server file for the above - this case 'server.js' = add code as needed, for this style of project setup the following will be required:
+                        const express = require('express') // imports express
+                        const app = express() // creates a variable to utilise the express import
+                        app.listen(3000, () => console.log('Server up!')) // Keep as the last entry - Sets the port where the app should listen and then logs if the server up or not - change the port as needed
+6.  Create '.env' file
+7.  Create '.gitignore' file git ignore to include
+                        .env - as it has private/sensitive information
+                        node_modules - not needed as can be installed locally
+8.  Add the mongoose requirement variable and db connection - note the db does not need to exist
+                        Update the .env file by adding
+                                DATABASE_URL = mongodb://localhost/subscribers
+                        and add - to the top of the server.js file: 
+                                require('dotenv').config()
+                        then add:
+                                const mongoose = require('mongoose')
+                                mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+9.  Add further checks to the db connection
+                        const db = mongoose.connection
+                        db.on('error', (err) => console.error(err))
+                        db.once('open', () => console.log('Connected to database'))
+10. Setup server to accept JSON via middleware
+                        app.use('express.json()')
+11. Setup routes and corresponding folders and files as per the route path, as in folder = routes and file = subscribers.js
+                        const subscriberRouter = require('./routes/subscribers')
+                        app.use('/subscribers', subscriberRouter)
+12. The app will show errors, to temp fix add the following to the subscribers.js
+                        const express = require('express')
+                        const router = express.Router()
+
+                        module.exports = router
+13. Create the routes in the subscribers.js file (between the vars and module.exports = router), syntax =
+                        router.get('/', (req, res) => {
+
+                        })
+                        or for single GET, POST,...add the param of the entry to find
+                            router.get('/:id', (req, res) => {
+
+                            })
+                        Create the above for all instances of routes you want, as in, GET (single and multiple), POST, PUT (or PATCH if only wanting to 
+                        update a single item in an entry, such as the subs name otherwise if using PUT it will update the entire entry)
+14. Install REST Client to your IDE and then create a file in the root called 'route.rest' (or whatevber you want to name the file, but ext must be .rest)
+                        Add to the Get multiple route in the subscribers.js (between the braces)
+                                res.send('Hello World')
+                        In the file create:
+                                GET http://localhost:3000/subscribers - the port must be the same as the port you are listening to in the server.js file
+                        click the 'Send Request' above the GET call you have just made - it should call the 'Get multiple' - 'Hello World'
+                        Add to the Get single route in the subscribers.js
+                                res.send(req.params.id)
+                        Then create a new GET request in the routes.rest file (separate the two requests with 3 x hashes '###')
+                                GET http://localhost:3000/subscribers/12
+14. Create a 'models' folder and then a JS file in it, in this instance it will be subscriber.js, then include the following in the subscriber.js
+                        const mongoose = require('mongoose')
+                        Make the scema:
+                        const subscriberSchema = new mongoose.Schema({
+                                make the schema as needed, such as:
+                                name: {
+                                        type: String,
+                                        required: true
+                                },
+                                subscribedToChannel: {
+                                        type: String,
+                                        required: true
+                                },
+                                subscribeDate: {
+                                        type: Date,
+                                        required: true,
+                                        default: Date.now
+                                }
+                        })
+
+                        module.exports = mongoose.model('Subscriber', subscriberSchema) // Takes two params - database name and schema name
+15. Include the subscriber model in the Routes subscribers.js by adding
+                        const Subscriber = require('../models/subsciber')
+16. See the files for the reamining coding and examples
+                        
