@@ -18,7 +18,8 @@ npm i express mongoose --save
 ```
 npm i --save-dev dotenv nodemon
 ```
-#### Replace the "test": "..." entry in the 'package.json' file with **NOTE the server.js will be what is the current server file name**
+#### Replace the "test": "..." entry in the 'package.json' file with 
+**NOTE the server.js will be what is the current server file name**
 ```
 "devStart": "nodemon server.js"
 ```
