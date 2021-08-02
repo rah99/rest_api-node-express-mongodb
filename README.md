@@ -27,6 +27,10 @@ npm i --save-dev dotenv nodemon
 ```
 DATABASE_URL = mongodb://localhost/subscribers
 ```
+#### To start the server enter
+```
+npm run devStart
+```
 
 ## Acknowledgements and Resources
 ```
