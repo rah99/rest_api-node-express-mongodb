@@ -4,6 +4,7 @@
 ```
 https://www.mongodb.com/try/download/community
 ```
+#
 ## IDE
 ### Visual Studio Code - with extension REST Client (to enable use of "route.rest" file) found as below
 ```
