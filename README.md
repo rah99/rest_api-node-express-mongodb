@@ -23,4 +23,9 @@ npm i --save-dev dotenv nodemon
 ```
 "devStart": "nodemon server.js"
 ```
+#### Create .env file and add
+```
+DATABASE_URL = mongodb://localhost/subscribers
+```
+
 
