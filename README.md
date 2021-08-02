@@ -28,4 +28,9 @@ npm i --save-dev dotenv nodemon
 DATABASE_URL = mongodb://localhost/subscribers
 ```
 
+## Aknowledgements and Resources
+```
+https://www.youtube.com/watch?v=fgTGADljAeg
+```
+
 
