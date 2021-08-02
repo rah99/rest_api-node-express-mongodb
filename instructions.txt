@@ -18,7 +18,7 @@ This is a REST (REpresentation State Transfer) API using GET, POST, PUT, DELETE
                         const app = express() // creates a variable to utilise the express import
                         app.listen(3000, () => console.log('Server up!')) // Keep as the last entry - Sets the port where the app should listen and then logs if the server up or not - change the port as needed
 6.  Create '.env' file
-7.  Create '.gitignore' file git ignore to include
+7.  Create '.gitignore' file git ignore to include **NOTE this step can be skipped if the project has been forked**
                         .env - as it has private/sensitive information
                         node_modules - not needed as can be installed locally
 8.  Add the mongoose requirement variable and db connection - note the db does not need to exist
