@@ -15,6 +15,7 @@ https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 #
 ## Quick Start (use the terminal/command prompt)
 ### Please see "instructions.txt" file for full explaination of getting this up and running
+### If you to create the application from scratch - from command below to...
 #### Initialise package 
 ```
 npm init -y
@@ -37,6 +38,15 @@ npm i --save-dev dotenv nodemon
 DATABASE_URL = mongodb://localhost/subscribers
 ```
 #### To start the server enter
+```
+npm run devStart
+```
+### ...here.
+### Alternatively as the "package.json" has the dependencies recorded (will still need mongoDB if you do not have it)
+```
+npm install
+```
+#### Start server
 ```
 npm run devStart
 ```
